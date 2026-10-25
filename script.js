@@ -203,6 +203,11 @@ volumeSlider.addEventListener('input', (e) => {
     else if (targetVol < 0.4) volIcon.innerText = "🔈";
     else volIcon.innerText = "🔊";
 });
+function loop(){
+    if (isPlaying) {
+        requestAnimationFrame(loop);
+    }       
+};
 
 audio.addEventListener('ended', () => {
     nextTrack();
